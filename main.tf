@@ -16,7 +16,7 @@ resource "azurerm_resource_group" "example" {
   location = "West Europe"
 }
 
-var "azurerm_storage_account" {
+variable "azurerm_storage_account" {
 type = string
 }
 
