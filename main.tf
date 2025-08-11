@@ -16,8 +16,12 @@ resource "azurerm_resource_group" "example" {
   location = "West Europe"
 }
 
+var "azurerm_storage_account" {
+type = string
+}
+
 resource "azurerm_storage_account" "example" {
-  name                     = "syedjavedstorageaccount"
+  name                     = var.azurerm_storage_account
   resource_group_name      = azurerm_resource_group.example.name
   location                 = azurerm_resource_group.example.location
   account_tier             = "Standard"
